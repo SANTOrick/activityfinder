@@ -1,0 +1,5 @@
+<%= @question.title %>
+
+
+<%= button_to "YES", answer_question_path, params: { answer: 'yes' }  %>
+<%= button_to "NO", answer_question_path, params: { answer: 'no' } %>
