@@ -1,4 +1,4 @@
 <h1><%= @activity.title %></h1>
 <p><%= @activity.description%></p>
 <img src="<%= @activity.image %>" alt="image">
-<button type="button" name="nada"><%= link_to "BOOK ME", @activity.url%></button>
+<button type="button" name="nada"><%= link_to "Reserve a Visit", @activity.url%></button> <button type="button" name="button">Add to my Booking<%= Booking.create(user_id: @activity.users.ids, activity_id: @activity.id) %></button>
