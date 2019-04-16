@@ -16,13 +16,13 @@ class QuestionsController < ApplicationController
 
       @q = Question.find_by(id: @question.choice_2)
     elsif @q.id == 555
-      redirect_to "/activities"
+      redirect_to "/activities/index"
     elsif @q.id == 666
-
+      redirect_to "/activities/666"
     elsif @q.id == 999
 
     elsif @q.id == 888
-
+      redirect_to "/activities/index"
     end
     redirect_to question_path(@q.id)
   end

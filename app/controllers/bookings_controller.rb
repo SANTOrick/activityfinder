@@ -6,7 +6,6 @@ class BookingsController < ApplicationController
 
     def show
       @booking = find_me
-
     end
 
     def new
@@ -37,6 +36,6 @@ class BookingsController < ApplicationController
     private
 
     def booking_params
-      params.require(:booking).permit()
+      params.require(:booking).permit(:user_id, :activity_id)
     end
 end
