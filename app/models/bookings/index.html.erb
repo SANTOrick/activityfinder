@@ -1,0 +1,5 @@
+<% @bookings.each do |booking|%>
+<h3> Booking for :<%= link_to booking.activity.title, booking%></h3>
+<%= %>
+<%= %>
+<% end %>
