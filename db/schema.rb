@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2019_04_16_081856) do
     t.string "title"
     t.integer "choice_1"
     t.integer "choice_2"
+    t.string "button_1"
+    t.string "button_2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

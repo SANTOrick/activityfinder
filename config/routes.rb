@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/users/main_page', to: 'users#main_page', as: :main_page
   get '/activities/index_museum', to: 'activities#index_museum', as: :index_museum
   post '/questions/:id/answer', to: 'questions#answer', as: :answer
+  get '/activities/random', to: 'activities#random', as: :random_activity
   resources :bookings
   resources :activities
   resources :answers

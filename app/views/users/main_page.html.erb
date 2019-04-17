@@ -21,6 +21,8 @@
     size: large;
   }
 
+  .button_out_Holder{
+  }
 
   body {
     background-color: #f4511e
@@ -48,7 +50,10 @@
       <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
       <li><a href="/login_form">Login <span class="glyphicon glyphicon-user"></span></a></li>
       <li><a href="/users/new">Create Account <span class="glyphicon glyphicon-plus"></span></a></li>
-      <li><a href="#">My Bookings <span class="glyphicon glyphicon-glass"></span></a></li>
+      <li><a href="/bookings/">My Bookings <span class="glyphicon glyphicon-glass"></span></a></li>
+      <li><form action="/sessions/logout">
+            <input type="submit" class="btn btn-warning" value="LogOut" />
+          </form></li>
     </ul>
   </div>
 </nav>
@@ -62,9 +67,10 @@
               <h4 class= "text-center">Maybe not the ones you like</h4>
               <p class= "text-center">..nor you ever heard of..</p>
                 <div class="buttonHolder">
-                  <button type="button" class="btn btn-info">
-                     <span class="glyphicon glyphicon-search"></span> Random Activity
-                   </button>            </div>
+                <form action="/activities/random">
+                  <input type="submit" class="btn btn-info" value="Random Activity" /> <span class="glyphicon glyphicon-search"></span>
+                </form>
+                </div>
           </div>
         </div>
 
