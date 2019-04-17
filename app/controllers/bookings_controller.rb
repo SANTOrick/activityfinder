@@ -13,7 +13,8 @@ class BookingsController < ApplicationController
     end
 
     def create
-      @booking = Booking.find_or_create_by(booking_params)
+      @booking = Booking.find_or_create_by(params[:activity_id])
+      byebug
       if @booking.save
         flash[:message] = "Booking added!"
       end
