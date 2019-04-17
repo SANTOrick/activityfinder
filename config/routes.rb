@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   resources :users
   resources :questions, except: [:create]
   post '/questions/:id/answer', to: 'questions#answer', as: :answer_question
-
+  delete "/logout", to: "sessions#logout"
 
 end
