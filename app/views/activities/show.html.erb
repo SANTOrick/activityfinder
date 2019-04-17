@@ -43,7 +43,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<%= flash[:messages] if flash[:messages]%>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
@@ -61,6 +61,7 @@
       <a href="/login_form">Login <span class="glyphicon glyphicon-user"></span></a>
       <a href="/users/new">Create Account <span class="glyphicon glyphicon-plus"></span></a>
       <%end%>
+
   </div>
 </nav>
 
