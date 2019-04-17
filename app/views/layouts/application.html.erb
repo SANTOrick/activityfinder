@@ -10,13 +10,7 @@
   </head>
 
   <body>
-    <%if @current_user %>
-  <p><%= link_to @current_user.name, user_path(@current_user)%></p>
-  <%end%><%if @current_user%><%= button_to "Log out", {action: "logout", controller:"sessions"}, method: "delete" %>
-    <% else %>
-    <li><a href="/login_form">Login</a></li>
-    <%end%>
-
+  
     <%= yield %>
   </body>
 </html>

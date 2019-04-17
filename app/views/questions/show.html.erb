@@ -44,18 +44,19 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li class="active"><a href="http://localhost:3000"><span class="glyphicon glyphicon-home"></span></a></li>
-
-      <%if @current_user %>
-      <a href="<%= @current_user.name %>"></a>
-      <form class="submit" action="/sessions/logout" method="delete">
-      </form>
-      <% else %>
-      <li><a href="/login_form">Login <span class="glyphicon glyphicon-user"></span></a></li>
-      <%end%>
-
-      <li><a href="users/new">Create Account <span class="glyphicon glyphicon-plus"></span></a></li>
       <li><a href="/bookings/">My Bookings <span class="glyphicon glyphicon-glass"></span></a></li>
-    </ul>
+    <%if @current_user %>
+        <li><a href="<%= user_path(@current_user) %>"><%= @current_user.name %><span class="glyphicon glyphicon-user"></a></li>
+        </ul>
+      <div class="logout margin-right: -500px">
+        <form class="submit" action="/sessions/logout" method="delete">
+          <input type="submit" class="btn btn-warning" value="Log Out" />
+        </form>
+      </div>
+    <% else %>
+    <a href="/login_form">Login <span class="glyphicon glyphicon-user"></span></a>
+    <a href="/users/new">Create Account <span class="glyphicon glyphicon-plus"></span></a>
+    <%end%>
   </div>
 </nav>
 
