@@ -9,12 +9,15 @@ class BookingsController < ApplicationController
     end
 
     def new
-
+      @booking = Booking.new
     end
 
     def create
-      @booking = Booking.create(booking_params)
-      redirect_to @booking
+      @booking = Booking.find_or_create_by(booking_params)
+      if @booking.save
+        flash[:message] = "Booking added!"
+      end
+      redirect_to bookings_path
     end
 
     def edit
@@ -33,6 +36,11 @@ class BookingsController < ApplicationController
       Booking.find(params[:id])
     end
 
+    def destroy
+      @booking = Booking.find(params[:id])
+      @booking.destroy
+      redirect_to bookings_path
+    end
     private
 
     def booking_params
