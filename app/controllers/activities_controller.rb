@@ -15,5 +15,9 @@ class ActivitiesController < ApplicationController
     Activity.find(params[:id])
   end
 
+  def random
+    @activity = Activity.all.sample
+    redirect_to activity_path(@activity)
+  end
 
 end

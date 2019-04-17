@@ -1,6 +1,66 @@
+<style>
+  .container1{
+    text-align: center;
+    position: relative;
 
-<%= @question.title %>
+  }
+  .container2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+
+  .buttonHolder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    size: large;
+  }
 
 
-<%= button_to "YES", answer_question_path, params: { answer: 'yes' }  %>
-<%= button_to "NO", answer_question_path, params: { answer: 'no' } %>
+  body {
+    background-color: #f4511e
+  }
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="http://localhost:3000"><span class="glyphicon glyphicon-home"></span></a></li>
+      <li><a href="/login_form">Login <span class="glyphicon glyphicon-user"></span></a></li>
+      <li><a href="users/new">Create Account <span class="glyphicon glyphicon-plus"></span></a></li>
+      <li><a href="/bookings/">My Bookings <span class="glyphicon glyphicon-glass"></span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="question">
+  <%= flash[:errors] if flash[:errors] %>
+
+  <h1><%= @question.title %></h1>
+
+
+  <%= button_to "#{@question.button_1}", answer_question_path, params: { answer: 'yes' }  %>
+  <%= button_to "#{@question.button_2}", answer_question_path, params: { answer: 'no' } %>
+
+</div>
+
+</body>
+</html>

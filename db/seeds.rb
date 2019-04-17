@@ -4,11 +4,11 @@ Activity.destroy_all
 User.destroy_all
 Answer.destroy_all
 
-q5 = Question.create(title: "Do you like music?", choice_1: 555, choice_2: 666)
-q4 = Question.create(title: "Alchool or culture?", choice_1: q5.id, choice_2: 444)
-q3 = Question.create(title: "Fun or Food?", choice_1: q4.id, choice_2: 999)
-q2 = Question.create(title: "Are you a day-sparkler?", choice_1: q3.id, choice_2: q3.id)
-q1 = Question.create(title: "Do you like to hang out alone or with other human beigns?", choice_1: q2.id, choice_2: 888)
+q5 = Question.create(title: "Do you like music?", choice_1: 555, choice_2: 666, button_1: "I hate French rap", button_2: "Je suis en rapper du la France")
+q4 = Question.create(title: "Alchool or culture?", choice_1: q5.id, choice_2: 444, button_1: "CnH(2n + 1)OH please", button_2: "Culture please")
+q3 = Question.create(title: "Fun or Food?", choice_1: q4.id, choice_2: 999, button_1: "I wanna get some fun", button_2: "FOOD WHERE IS FOOOOOOD????")
+q2 = Question.create(title: "Are you a day-sparkler?", choice_1: q3.id, choice_2: q3.id, button_1: "Oh yea, definitely", button_2: "Da fuq you talkin' 'bout?")
+q1 = Question.create(title: "Do you like to hang out alone or with other human beigns?", choice_1: q2.id, choice_2: 888, button_1: "The world is wrong", button_2: "I'm a beigns")
 
 
 l1 = Activity.create(title: "Victoria & Albert", description: "The Victoria and Albert Museum (often abbreviated as the V&A) in London is the world's largest museum of applied and decorative arts and design, as well as sculpture, housing a permanent collection of over 2.27 million objects. It was founded in 1852 and titled after Queen Victoria and Prince Albert.", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/V%26A_Museum_Foyer%2C_London_-_Oct_2012.jpg/800px-V%26A_Museum_Foyer%2C_London_-_Oct_2012.jpg", url: "https://www.vam.ac.uk/visit", category: "Museum" )

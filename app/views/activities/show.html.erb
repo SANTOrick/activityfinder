@@ -1,4 +1,78 @@
-<h1><%= @activity.title %></h1>
-<p><%= @activity.description%></p>
-<img src="<%= @activity.image %>" alt="image">
-<button type="button" name="nada"><%= link_to "Reserve a Visit", @activity.url%></button> <button type="button" name="button">Add to my Booking<%= Booking.create(user_id: @activity.users.ids, activity_id: @activity.id) %></button>
+<style>
+  .container1{
+    text-align: center;
+    position: relative;
+
+  }
+  .container2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+
+  .buttonHolder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    size: large;
+  }
+
+  .button_action_Holder{
+
+  }
+
+  body {
+  background-image: url("img_tree.gif"), url("paper.gif");
+  background-color: #cccccc;
+  }
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+      <li><a href="/login_form">Login <span class="glyphicon glyphicon-user"></span></a></li>
+      <li><a href="/users/new">Create Account <span class="glyphicon glyphicon-plus"></span></a></li>
+      <li><a href="/bookings/">My Bookings <span class="glyphicon glyphicon-glass"></span></a></li>
+      <li><form action="/sessions/logout">
+            <input type="submit" class="btn btn-warning" value="LogOut" />
+          </form></li>
+    </ul>
+  </div>
+</nav>
+
+  <div class="container1">
+    <h1><%= @activity.title %></h1>
+    <h4 style="text-align:left;"><%= @activity.description%></h4>
+    <img src="<%= @activity.image %>" alt="image" width="500" height="600">
+      <div class="button_action_holder">
+          <form action="<% Booking.create(user_id: @activity.users.ids, activity_id: @activity.id) %>">
+            <input type="submit" class="btn btn-primary" value="Add to my Bookings" />
+          </form><form action="<%= @activity.url %>">
+            <input type="submit" class="btn btn-info" value="Reserve a visit" />
+          </form>
+      </div>
+
+  </div>
+
+</body>
+</html>
