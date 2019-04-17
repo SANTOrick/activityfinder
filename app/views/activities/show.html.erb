@@ -70,7 +70,7 @@
     <h4 style="text-align:left;"><%= @activity.description%></h4>
     <img src="<%= @activity.image %>" alt="image" width="500" height="600">
       <div class="button_action_holder">
-          <form action="<% Booking.create(user_id: @activity.users.ids, activity_id: @activity.id) %>">
+          <form action="<% Booking.find_or_create_by(user_id: @current_user.id, activity_id: @activity.id) %>">
             <input type="submit" class="btn btn-primary" value="Add to my Bookings" />
           </form><form action="<%= @activity.url %>">
             <input type="submit" class="btn btn-info" value="Reserve a visit" />
