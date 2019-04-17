@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 # before_action :require_login
 # skip_before_action :require_login, only: [:index]
+
+
   def index
     @users = User.all
   end
@@ -49,6 +51,6 @@ end
   private
 
   def user_params
-    params.require(:user).permit(:name, :password, :email)
+    params.require(:user).permit(:name, :password_digest, :email)
   end
 end

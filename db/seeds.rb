@@ -30,4 +30,3 @@ b6 = Booking.create(user_id: u1.id, activity_id: l3.id)
 b7 = Booking.create(user_id: u1.id, activity_id: l2.id)
 b8 = Booking.create(user_id: u2.id, activity_id: l3.id)
 b9 = Booking.create(user_id: u4.id, activity_id: l1.id)
-
