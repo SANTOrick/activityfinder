@@ -30,7 +30,7 @@
         <%= button_to "Random activity", activities_path(Activity.all.sample.id, class: "btn btn-primary") %>
       </div>
       <div class="col-lg-4 col-sm-4 ">
-        <%= form_for :users, url: users_path do |f|%>
+        <%= form_for :user, url: users_path do |f|%>
         <div class="form-group">
           <%=f.label :name %>
           <%=f.text_field  :name%>
@@ -53,4 +53,3 @@
 
 
 </div>
-

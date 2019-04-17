@@ -24,6 +24,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def profile
+  if !@current_user
+    flash[:notice] = "GO MAKE A PROFILE!"
+    redirect_to "/users/new"
+  end
+end
   def edit
     @user = find_me
   end
