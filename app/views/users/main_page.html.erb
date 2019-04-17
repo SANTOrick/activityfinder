@@ -1,0 +1,36 @@
+<style>
+.logo {
+  font-size: 300px;
+}
+@media screen and (max-width: 768px) {
+  .col-sm-4 {
+    text-align: center;
+    margin: 25px 0;
+  }
+}
+.container-fluid {
+background-color: #f4511e; /* Orange */
+color: #ffffff;
+}
+</style>
+<div class="container">
+  <div class="logo">
+    <div class="row">
+      <div class="offset-sm-8">
+        <h1 class="text-center">ACTIVITY FINDER</h1>
+      </div>
+    </div>
+  </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8 col-lg-8">
+      <h2>We find activities for you!</h2>
+      <h4>Maybe not the ones you like</h4>
+      <p>..nor you ever heard of</p>
+      <%= button_to "Random activity", activities_path(Activity.all.sample.id, class: "btn btn-primary") %>
+    </div>
+</div>
+
+
+
+</div>
