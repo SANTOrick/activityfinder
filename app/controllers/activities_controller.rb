@@ -9,6 +9,14 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = find_me
+    @new_booking_hash =
+    {
+      booking:
+      {
+        user_id: @current_user.id,
+        activity_id: @activity.id
+      }
+    }
   end
 
   def find_me
