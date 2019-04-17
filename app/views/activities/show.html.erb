@@ -46,17 +46,22 @@
 <%= flash[:messages] if flash[:messages]%>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
-    </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-      <li><a href="/login_form">Login <span class="glyphicon glyphicon-user"></span></a></li>
-      <li><a href="/users/new">Create Account <span class="glyphicon glyphicon-plus"></span></a></li>
       <li><a href="/bookings/">My Bookings <span class="glyphicon glyphicon-glass"></span></a></li>
-      <li><form action="/login_form">
-            <input type="submit" class="btn btn-warning" value="LogOut" />
-          </form></li>
-    </ul>
+      <%if @current_user %>
+          <li><a href="<%= user_path(@current_user) %>"><%= @current_user.name %><span class="glyphicon glyphicon-user"></a></li>
+          </ul>
+        <div class="logout margin-right: -500px">
+          <form class="submit" action="/sessions/logout" method="delete">
+            <input type="submit" class="btn btn-warning" value="Log Out" />
+          </form>
+        </div>
+      <% else %>
+      <a href="/login_form">Login <span class="glyphicon glyphicon-user"></span></a>
+      <a href="/users/new">Create Account <span class="glyphicon glyphicon-plus"></span></a>
+      <%end%>
+
   </div>
 </nav>
 

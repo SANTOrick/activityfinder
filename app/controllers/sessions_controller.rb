@@ -18,8 +18,9 @@ class SessionsController < ApplicationController
 
    def logout
      session[:user_id] = nil
-      redirect_to "/login_form"
+      redirect_to “/login_form”
    end
+
 
   end
 
