@@ -1,5 +1,5 @@
 <h1><%=@current_user.name%>'s Bookings</h1>
 
-<% @bookings.each do |b| %>
+<% @current_user.bookings.each do |b| %>
 <li><%= link_to b.activity.title, activity_path(b.activity) %><%=link_to 'Destroy', b, method: :delete%></li>
   <%end%>
