@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
 
     def create
       @booking = Booking.find_or_create_by(booking_params)
+
       if @booking.save
         flash[:message] = "Booking added!"
       end
