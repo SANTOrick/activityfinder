@@ -3,10 +3,10 @@ class User < ApplicationRecord
   has_many :questions, through: :answers
   has_many :bookings
   has_many :activities, through: :bookings
-
+  has_secure_password
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
-  validates :password, presence: true
+  validates :password_digest, presence: true
 
   def answers_ids=(ids)
    ids.each do |id|
@@ -14,5 +14,6 @@ class User < ApplicationRecord
      self.answers << answer
     end
   end
+
 
 end

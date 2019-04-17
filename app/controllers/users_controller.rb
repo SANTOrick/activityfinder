@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 # before_action :require_login
 # skip_before_action :require_login, only: [:index]
+
+
   def index
     @users = User.all
   end
@@ -24,6 +26,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def profile
+  if !@current_user
+    flash[:notice] = "GO MAKE A PROFILE!"
+    redirect_to "/users/new"
+  end
+end
   def edit
     @user = find_me
   end
@@ -43,6 +51,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :password, :email)
+    params.require(:user).permit(:name, :password_digest, :email)
   end
 end
