@@ -1,7 +1,54 @@
-<h1>All Activities!</h1>
+  <div class="container1">
+      <div class="row-lg-2">
+        <div class="col-lg-2">
+          <h1>All Museums!</h1>
 
-<% @activities.each do |a|%>
-<li><%= link_to a.title, a%>
-    <img src="<%= a.image %>" alt="image" width="500" height="600">
-  </li>
-<%end%>
+          <% @activities.where(category: "Museum").each do |a|%>
+          <li><%= link_to a.title, a%>
+            </li>
+          <%end%>
+        </div>
+          </div>
+          <div class="row-lg-2">
+            <div class="col-lg-2">
+              <h1>All Restaurants!</h1>
+              <% @activities.where(category: "Restaurant").each do |a|%>
+              <li><%= link_to a.title, a%>
+                </li>
+              <%end%>
+            </div>
+              </div>
+
+              <div class="row-lg-2">
+                <div class="col-lg-2">
+                  <h1>All Theaters!</h1>
+
+                  <% @activities.where(category: "Theater").each do |a|%>
+                  <li><%= link_to a.title, a%>
+                    </li>
+                  <%end%>
+                </div>
+                  </div>
+
+                  <div class="row-lg-2">
+                    <div class="col-lg-2">
+                      <h1>All Concerts!</h1>
+
+                      <% @activities.where(category: "Concert").each do |a|%>
+                      <li><%= link_to a.title, a%>
+                        </li>
+                      <%end%>
+                    </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-2">
+                          <h1>All Pubs!</h1>
+
+                          <% @activities.where(category: "Pub").each do |a|%>
+                          <li><%= link_to a.title, a%>
+                            </li>
+                          <%end%>
+                        </div>
+                          </div>
+      </div>
+  </div>

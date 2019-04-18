@@ -51,7 +51,7 @@
           <li><a href="/bookings/">My Bookings <span class="glyphicon glyphicon-glass"></span></a></li>
           <%if @current_user %>
               <li><a href="<%= user_path(@current_user) %>"><%= @current_user.name %><span class="glyphicon glyphicon-user"></a></li>
-              <%= button_to "logout", logout_path, method: :delete %>
+            <li>  <%= button_to "logout", logout_path, method: :delete, class: "btn btn-warning btn-lg" %></li>
           <% else %>
           <li><a href="/login_form">Login <span class="glyphicon glyphicon-user"></span></a></li>
           <li><a href="/users/new">Create Account <span class="glyphicon glyphicon-plus"></span></a></li></ul>

@@ -1,4 +1,47 @@
-<% @concerts.each do |concert| %>
-<%= link_to concert.title, concert%>
-  <img src="<%= concert.image %>" alt="image" width="500" height="600">
-<% end %>
+<style>
+  .container1{
+    text-align: center;
+    position: relative;
+
+  }
+  .container2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+
+  .buttonHolder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    size: large;
+  }
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<%= flash[:messages] if flash[:messages]%>
+  <h4>Here's a list of the possible destinations you might find interesting</h4>
+  <p>According to our hamsters....</p>
+  <div class="container1"><% @concerts.each do |concert| %>
+  <%= link_to concert.title, concert%>
+    <img src="<%= concert.image %>" alt="image" width="500" height="600">
+  <% end %>
+  </div>
+
+</body>
+</html>

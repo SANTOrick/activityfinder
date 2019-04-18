@@ -1,9 +1,10 @@
 <style>
-  .container1{
-    text-align: center;
-    position: relative;
+  .container1 h1 {
+
+  text-shadow: 2px 2px #666666;
 
   }
+
   .container2 {
     position: absolute;
     top: 50%;
@@ -19,14 +20,6 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
     size: large;
-  }
-
-  .button_action_Holder{
-
-  }
-
-  body {
-  background-color: #cccccc;
   }
 
 </style>
@@ -46,16 +39,20 @@
 
   <div class="container1">
     <h1><%= @activity.title %></h1>
-    <h4 style="text-align:left;"><%= @activity.description%></h4>
-    <img src="<%= @activity.image %>" alt="image" width="500" height="600">
-      <div class="button_action_holder">
-          <%= button_to "Make a Booking", bookings_path, params: @new_booking_hash, class: "btn btn-primary" %>
-
-          <form action="<%= @activity.url %>">
-            <input type="submit" class="btn btn-info" value="Reserve a visit" />
-          </form>
+      <div class="row">
+        <div class="col-lg-6">
+          <%= @activity.description%>
+        </div>
+        <div class="col-lg-6">r
+          <img src="<%= @activity.image %>" alt="image" width="500" height="400">
+            <div class="button_action_holder">
+              <%= button_to "Make a Booking", bookings_path, params: @new_booking_hash, class: "btn btn-primary" %>
+              <form action="<%= @activity.url %>">
+                <input type="submit" class="btn btn-info" value="Reserve a visit" />
+              </form>
+            </div>
+          </div>
       </div>
-
   </div>
 
 </body>

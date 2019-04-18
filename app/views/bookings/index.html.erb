@@ -51,6 +51,8 @@
       <li><%= link_to b.activity.title, activity_path(b.activity) %>     <%=link_to 'Destroy', b, method: :delete%></li>
         <%end%>
         </div>
-        <%= button_to "All activities", activities_path, method: "get"%>
+        <div class="container2 align-center">
+        <%= button_to "All activities", activities_path, method: "get", class: "btn btn-primary btn-lg" %>
+        </div>
   </body>
   </html>
