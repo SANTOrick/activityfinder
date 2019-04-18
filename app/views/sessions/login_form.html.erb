@@ -40,17 +40,6 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="http://localhost:3000"><span class="glyphicon glyphicon-home"></span></a></li>
-      <li><a href="/login_form">Login <span class="glyphicon glyphicon-user"></span></a></li>
-      <li><a href="users/new">Create Account <span class="glyphicon glyphicon-plus"></span></a></li>
-      <li><a href="/bookings/">My Bookings <span class="glyphicon glyphicon-glass"></span></a></li>
-    </ul>
-  </div>
-</nav>
-
 <%= flash[:errors] if flash[:errors] %>
 <div class="col-lg-4 col-sm-4 ">
   <%= form_for :user, url: "/login", method: "post" do |f|%>

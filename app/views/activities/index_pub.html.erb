@@ -1,3 +1,4 @@
+
 <style>
   .container1{
     text-align: center;
@@ -21,11 +22,12 @@
     size: large;
   }
 
-  .button_out_Holder{
+  .button_action_Holder{
+
   }
 
   body {
-    background-color: #f4511e
+  background-color: #cccccc;
   }
 
 </style>
@@ -41,22 +43,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<%= flash[:messages] if flash[:messages]%>
+  <h4>Here's a list of the possible destinations you might find interesting</h4>
+  <p>According to our hamsters....</p>
+  <div class="container1"><% @pubs.each do |pub| %>
+  <li><%= link_to pub.title, pub%></li>
+  <% end %>
 
-  <div class="container1">
-        <h1>ACTIVITY FINDER</h1>
-      </div>
-  <div class="containter2">
-    <div class="container-fluid">
-              <h2 class= "text-center">We find activities for you!</h2>
-              <h4 class= "text-center">Maybe not the ones you like</h4>
-              <p class= "text-center">..nor you ever heard of..</p>
-                <div class="buttonHolder">
-                <form action="/activities/random">
-                  <input type="submit" class="btn btn-info" value="Random Activity" /> <span class="glyphicon glyphicon-search"></span>
-                </form>
-                </div>
-          </div>
-        </div>
+  </div>
 
 </body>
 </html>

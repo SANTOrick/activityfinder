@@ -14,17 +14,11 @@ class SessionsController < ApplicationController
    else
      flash[:errors] = "Wrong username and password!!!"
      redirect_to "/login_form"
-   end
-
-   def logout
-     session[:user_id] = nil
-      redirect_to “/login_form”
-   end
-
-
+    end
   end
 
-
-
-
+  def logout
+    session[:user_id] = nil
+    redirect_to login_form_path
+  end
 end

@@ -1,3 +1,56 @@
-<% @museums.each do |museum| %>
-<%= link_to museum.title, museum%>
-<% end %>
+
+<style>
+  .container1{
+    text-align: center;
+    position: relative;
+
+  }
+  .container2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+
+  .buttonHolder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    size: large;
+  }
+
+  .button_action_Holder{
+
+  }
+
+  body {
+  background-color: #cccccc;
+  }
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<%= flash[:messages] if flash[:messages]%>
+  <h4>Here's a list of the possible destinations you might find interesting</h4>
+  <p>According to our hamsters....</p>
+  <div class="container1"><% @museums.each do |museum| %>
+  <li><%= link_to museum.title, museum%></li>
+  <% end %>
+
+  </div>
+
+</body>
+</html>

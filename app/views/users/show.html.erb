@@ -36,27 +36,6 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-      <li><a href="/bookings/">My Bookings <span class="glyphicon glyphicon-glass"></span></a></li>
-      <%if @current_user %>
-          <li><a href="<%= user_path(@current_user) %>"><%= @current_user.name %><span class="glyphicon glyphicon-user"></a></li>
-          </ul>
-        <div class="logout margin-right: -500px">
-          <form class="submit" action="/login_form" method="delete">
-            <input type="submit" class="btn btn-warning" value="Log Out" />
-          </form>
-        </div>
-      <% else %>
-      <a href="/login_form">Login <span class="glyphicon glyphicon-user"></span></a>
-      <%end%>
-  </div>
-</nav>
-
   <div class="container1">
       <h1><%= @user.name%>'s Profile</h1>
 <ul>

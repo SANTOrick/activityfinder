@@ -6,6 +6,8 @@ ruby '2.6.1'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'json'
+gem 'rest-client'
 
 gem 'sassc-rails', '>= 2.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

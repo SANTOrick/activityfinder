@@ -1,3 +1,5 @@
+
+
 class User < ApplicationRecord
   has_many :answers
   has_many :questions, through: :answers
@@ -14,6 +16,5 @@ class User < ApplicationRecord
      self.answers << answer
     end
   end
-
 
 end
