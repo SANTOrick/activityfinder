@@ -1,16 +1,4 @@
 <style>
-  .container1{
-    text-align: center;
-    position: relative;
-
-  }
-  .container2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-  }
 
   .buttonHolder {
     position: absolute;
@@ -21,45 +9,38 @@
     size: large;
   }
 
-
-  body {
-    background-color: #f4511e
-  }
-
 </style>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-
-<%= flash[:errors] if flash[:errors] %>
-<div class="col-lg-4 col-sm-4 ">
-  <%= form_for :user, url: "/login", method: "post" do |f|%>
-  <div class="form-group">
-    <%=f.label :name %>
-    <%=f.text_field  :name%>
-  </div>
-  <div class="form-group">
-    <%=f.label :email%>
-    <%=f.text_field :email%>
-  </div>
-  <div class="form-group">
-    <%=f.label :password%>
-    <%=f.password_field :password%>
-  </div>
-  <div class="form-group">
-    <%=f.submit "Login", class: "btn btn-primary btn-lg" %>
-  </div>
-  <% end %>
-</div>
-
-</body>
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+    <body>
+        <div class="container-fluid">
+          <%= flash[:errors] if flash[:errors] %>
+              <%= form_for :user, url: "/login", method: "post" do |f|%>
+            <div class="form-group">
+              <%=f.label :name %>
+              <%=f.text_field  :name%>
+            </div>
+            <div class="form-group">
+              <%=f.label :email%>
+              <%=f.text_field :email%>
+            </div>
+            <div class="form-group">
+              <%=f.label :password%>
+              <%=f.password_field :password%>
+            </div>
+            <div class="form-group">
+              <%=f.submit "Login", class: "btn btn-primary btn-lg" %>
+            </div>
+              <% end %>
+            </div>
+    </body>
 </html>

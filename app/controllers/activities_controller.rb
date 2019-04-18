@@ -2,6 +2,9 @@ class ActivitiesController < ApplicationController
   def index_museum
     @museums = Activity.where(category: "Museum")
   end
+  def index_restaurant
+    @restaurants = Activity.where(category: "Restaurant")
+  end
 
   def index_concert
     @concerts = Activity.where(category: "Concert")
@@ -11,12 +14,8 @@ class ActivitiesController < ApplicationController
     @pubs = Activity.where(category: "Pub")
   end
 
-  def index_restaurant
-    @restaurants = Activity.where(category: "Restaurant")
-  end
-
-  def index_theatre
-    @theatres = Activity.where(category: "Theatre")
+  def index_theater
+    @theaters = Activity.where(category: "Teather")
   end
 
   def index
@@ -24,6 +23,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+
       @activity = find_me
       if @current_user
       @new_booking_hash =
@@ -49,6 +49,6 @@ class ActivitiesController < ApplicationController
   def specific_random
     @new = @activity.spec_random
     redirect_to activity_path(@new)
-  end 
+  end
 
 end
