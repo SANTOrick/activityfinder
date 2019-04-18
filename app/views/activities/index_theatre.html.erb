@@ -1,0 +1,4 @@
+<% @theatres.each do |theatre| %>
+<%= link_to theatre.title, theatre%>
+  <img src="<%= theatre.image %>" alt="image" width="500" height="600">
+<% end %>

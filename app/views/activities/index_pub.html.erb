@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <style>
   .container1{
@@ -54,3 +55,9 @@
 
 </body>
 </html>
+=======
+<% @pubs.each do |pub| %>
+<%= link_to pub.title, pub%>
+  <img src="<%= pub.image %>" alt="image" width="500" height="600">
+<% end %>
+>>>>>>> 3df3e558e088c8174c765b2c4c2f038c17649c17

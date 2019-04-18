@@ -1,0 +1,7 @@
+<h1>All Activities!</h1>
+
+<% @activities.each do |a|%>
+<li><%= link_to a.title, a%>
+    <img src="<%= a.image %>" alt="image" width="500" height="600">
+  </li>
+<%end%>
