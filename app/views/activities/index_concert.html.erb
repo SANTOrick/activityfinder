@@ -1,0 +1,4 @@
+<% @concerts.each do |concert| %>
+<%= link_to concert.title, concert%>
+  <img src="<%= concert.image %>" alt="image" width="500" height="600">
+<% end %>

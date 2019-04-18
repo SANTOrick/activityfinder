@@ -1,0 +1,4 @@
+<% @restaurants.each do |restaurant| %>
+<%= link_to restaurant.title, restaurant%>
+  <img src="<%= restaurant.image %>" alt="image" width="500" height="600">
+<% end %>
