@@ -13,21 +13,16 @@ q1 = Question.create(title: "Do you like to hang out alone or with other human b
 
 l1 = Activity.create(title: "Victoria & Albert", description: "The Victoria and Albert Museum (often abbreviated as the V&A) in London is the world's largest museum of applied and decorative arts and design, as well as sculpture, housing a permanent collection of over 2.27 million objects. It was founded in 1852 and titled after Queen Victoria and Prince Albert.", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/V%26A_Museum_Foyer%2C_London_-_Oct_2012.jpg/800px-V%26A_Museum_Foyer%2C_London_-_Oct_2012.jpg", url: "https://www.vam.ac.uk/visit", category: "Museum" )
 l2 = Activity.create(title: "Science Museum", category: "Museum", description: "The Science Museum is a major museum on Exhibition Road in South Kensington, London. It was founded in 1857 and today is one of the city's major tourist attractions, attracting 3.3 million visitors annually.", image: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Science_Museum_-_East_Hall_2390.jpg", url: "https://www.sciencemuseum.org.uk/visit-us")
-l3 = Activity.create(title: "The counter at Sabor", description: "Spanish food", category: "Restaurant", image: "https://media.timeout.com/images/105239021/750/422/image.jpg", url: "https://www.sevenrooms.com/reservations/saborrestaurant/tripadvisor")
-l4 =
-l5 =
-l6 =
-l7 =
-l8 =
-l9 =
-l10 =
-l11 =
-l12 =
-l13 =
-l14 =
-l15 =
-l16 =
-l17 =
+l3 = Activity.create(title: "National History Museum", description: "Wander through the spectacular halls of the Natural History Museum, as you discover fascinating exhibits from the natural world. Marvel at dinosaur skeletons or gawp at a giant blue whale model.", category: "Museum", image: "http://www.nhm.ac.uk/content/dam/nhmwww/visit/waterhouse-facade-two-column.jpg", url: "http://www.nhm.ac.uk/visit/getting-here.html")
+l4 = Activity.create(title: "National Gallery", description: "The Gallery is an exempt charity, and a non-departmental public body of the Department for Culture, Media and Sport.[3] Its collection belongs to the government on behalf of the British public, and entry to the main collection is free of charge. It is among the most visited art museums in the world, after the Louvre, the British Museum, and the Metropolitan Museum of Art.", category: "Culture", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Galer%C3%ADa_Nacional%2C_Londres%2C_Inglaterra%2C_2014-08-07%2C_DD_035.JPG/1280px-Galer%C3%ADa_Nacional%2C_Londres%2C_Inglaterra%2C_2014-08-07%2C_DD_035.JPG", url: "https://www.nationalgallery.org.uk/")
+l5 = Activity.create(title: "Imperial War Museum", description: "IWM London is the world’s leading museum of war. Founded during the First World War, it gives voice to the extraordinary experiences of ordinary people forced to live their lives in a world torn apart by conflict.", category: "Museum", image: "https://cdn.londonandpartners.com/assets/attractions/culture/40814-640x360-imperialwarmuseum_front_640.jpg", url: "https://www.iwm.org.uk/visits/iwm-london")
+l6 = Activity.create(title: "National Maritime Museum", description: "Set in historic Maritime Greenwich, the National Maritime Museum showcases Britain’s naval history, from sea battles to exploratory expeditions. See ancient maps and ship models, and don’t miss the iconic uniform Nelson wore the day of the Battle of Trafalgar. ", category: "Museum", image: "https://upload.wikimedia.org/wikipedia/commons/1/18/National_maritime_museum.jpg", url: "https://www.rmg.co.uk/")
+l7 = Activity.create(title: "Core by Clare Smyth", description: "Core is an elegant and informal fine dining restaurant with an emphasis on natural, sustainable food, sourced from the UK’s most dedicated farmers and food producers. Micheline guide gave 2 out of 3 stars to Core by Claire Smyth", category: "Restaurant", image: "https://www.corebyclaresmyth.com/wp-content/uploads/2017/07/CORE_Interior_01-1-0x0.jpg", url: "https://www.corebyclaresmyth.com/")
+l8 = Activity.create(title: "Ormer Mayfair", description: "Shaun Rankin received a Michelin star in 2005 for his first restaurant in the Channel Islands. He held this for eight years until the launch of his second restaurant in 2013 for which he was awarded a Michelin star just four months after opening. His latest venture at Ormer Mayfair continues this celebration in the accolades it has received since opening. ", category: "Restaurant", image: "https://media-cdn.tripadvisor.com/media/photo-s/0c/ab/17/5d/ormer-mayfair-restaurant.jpg", url: "https://www.flemings-mayfair.co.uk/fine-dining-london/ormer-mayfair-restaurant/?utm_source=mybusiness&utm_medium=organic")
+l9 = Activity.create(title: "La Dame de Pic", description: "Offering Anne-Sophie’s signature cuisine, this celebrated French restaurant is located within the majestic setting of Four Seasons Hotel London at Ten Trinity Square, overlooking the Tower of London and
+Tower Bridge.", category: "Restaurant", image: "https://media-cdn.tripadvisor.com/media/photo-s/0e/d6/0a/74/la-dame-de-pic-london.jpg", url: "https://www.ladamedepiclondon.co.uk/?seo=google_local_tri5_emea%3Fseo%3Dgoogle_local_tri5_emea")
+l10 = Activity.create(title: "Skylon", description: "Skylon is situated on the first floor of the Royal Festival Hall in the Southbank Centre and offers stunning views from huge floor-to-ceiling windows. The restaurant features modern European cuisine in a relaxed atmosphere separated by a stunning centerpiece bar, which is renowned for its fabulous cocktails.", category: "Restaurant", image: "", url: "https://www.skylon-restaurant.co.uk/")
+
 
 u1 = User.create(name: "Riccardo", email: "ric123@gmail.com", password: "bananasarecool")
 u2 = User.create(name: "Myrto", email: "myrtokonst@gmail.com", password: "parampimpom")
@@ -35,11 +30,3 @@ u3 = User.create(name: "George", email: "gorgey-boy@gmail.com", password: "ilike
 u4 = User.create(name: "Ranjit", email: "ranpan@gmail.com", password: "ilovebooksiamanerd")
 
 b1 = Booking.create(user_id: User.first.id, activity_id: Activity.first.id)
-b2 = Booking.create(user_id: u2.id, activity_id: l1.id)
-b3 = Booking.create(user_id: u3.id, activity_id: l2.id)
-b4 = Booking.create(user_id: u4.id, activity_id: l1.id)
-b5 = Booking.create(user_id: u2.id, activity_id: l2.id)
-b6 = Booking.create(user_id: u1.id, activity_id: l3.id)
-b7 = Booking.create(user_id: u1.id, activity_id: l2.id)
-b8 = Booking.create(user_id: u2.id, activity_id: l3.id)
-b9 = Booking.create(user_id: u4.id, activity_id: l1.id)
