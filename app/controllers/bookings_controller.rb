@@ -1,49 +1,54 @@
 class BookingsController < ApplicationController
 
-    def index
+  def index
+    if @current_user
       @bookings = Booking.all
+    else
+      flash[:errors] = "Please sign in to see your Bookings!"
+      redirect_to login_form_path
     end
+  end
 
-    def show
-      @booking = find_me
+  def show
+    @booking = find_me
+  end
+
+  def new
+    @booking = Booking.new
+  end
+
+  def create
+    @booking = Booking.find_or_create_by(booking_params)
+    if @booking.save
+      flash[:message] = "Booking added!"
     end
+    redirect_to bookings_path
+  end
 
-    def new
-      @booking = Booking.new
-    end
+  def edit
+    @booking = find_me
+  end
 
-    def create
-      @booking = Booking.find_or_create_by(booking_params)
-      if @booking.save
-        flash[:message] = "Booking added!"
-      end
-      redirect_to bookings_path
-    end
+  def update
+    @booking = find_me
+    @booking.update(booking_params)
 
-    def edit
-      @booking = find_me
-    end
-
-    def update
-      @booking = find_me
-      @booking.update(booking_params)
-
-      redirect_to @booking
-    end
+    redirect_to @booking
+  end
 
 
-    def find_me
-      Booking.find(params[:id])
-    end
+  def find_me
+    Booking.find(params[:id])
+  end
 
-    def destroy
-      @booking = Booking.find(params[:id])
-      @booking.destroy
-      redirect_to bookings_path
-    end
-    private
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
+  end
+  private
 
-    def booking_params
-      params.require(:booking).permit(:user_id, :activity_id)
-    end
+  def booking_params
+    params.require(:booking).permit(:user_id, :activity_id)
+  end
 end

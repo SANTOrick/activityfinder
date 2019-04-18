@@ -5,7 +5,12 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    if @current_user
+      @users = User.all
+    else
+      flash[:errors]="Please sign in to continue"
+      redirect_to login_form_path
+    end
   end
 
   def show
