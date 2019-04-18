@@ -3,6 +3,22 @@ class ActivitiesController < ApplicationController
     @museums = Activity.where(category: "Museum")
   end
 
+  def index_concert
+    @concerts = Activity.where(category: "Concert")
+  end
+
+  def index_pub
+    @pubs = Activity.where(category: "Pub")
+  end
+
+  def index_restaurant
+    @restaurants = Activity.where(category: "Restaurant")
+  end
+
+  def index_theatre
+    @theatres = Activity.where(category: "Theatre")
+  end
+
   def index
     @activities = Activity.all
   end

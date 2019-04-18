@@ -1,3 +1,4 @@
 <% @museums.each do |museum| %>
 <%= link_to museum.title, museum%>
+  <img src="<%= museum.image %>" alt="image" width="500" height="600">
 <% end %>

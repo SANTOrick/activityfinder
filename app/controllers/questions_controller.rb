@@ -15,13 +15,13 @@ class QuestionsController < ApplicationController
       redirect_to question_path(@q.id)
     elsif @question.choice_1 == 888 || @question.choice_2 == 888
       redirect_to "/activities/index_museum"
-    elsif @q.id == 666
+    elsif @question.choice_1 == 666 || @question.choice_2 == 666
       redirect_to "/activities/index_pub"
-    elsif @q.id == 999
+    elsif @question.choice_1 == 999 || @question.choice_2 == 999
       redirect_to "/activities/index_restaurant"
-    elsif @q.id == 555
+    elsif @question.choice_1 == 555 || @question.choice_2 == 555
       redirect_to "/activities/index_concert"
-    elsif @q.id == 444
+    elsif @question.choice_1 == 444 || @question.choice_2 == 444
       redirect_to "/activities/index_theater"
     else
       @q = Question.find_by(id: @question.choice_2)
