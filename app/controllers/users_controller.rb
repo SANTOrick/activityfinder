@@ -5,7 +5,12 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    if @current_user
+      @users = User.all
+    else
+      flash[:errors]="Please sign in to continue"
+      redirect_to login_form_path
+    end
   end
 
   def show
@@ -20,7 +25,9 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     @question = Question.find_by(title:"Do you like to hang out alone or with other human beigns?")
       if @user.save
+          session[:user_id]= @user.id
         redirect_to question_path(@question)
+        
       else
           flash[:errors] = @user.errors.full_messages
       redirect_to new_user_path
@@ -30,7 +37,7 @@ class UsersController < ApplicationController
   def profile
   if !@current_user
     flash[:notice] = "GO MAKE A PROFILE!"
-    redirect_to "/users/new"
+    redirect_to new_user_path
   end
 end
   def edit
