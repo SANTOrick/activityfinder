@@ -24,15 +24,17 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @activity = find_me
-    @new_booking_hash =
-    {
-      booking:
+      @activity = find_me
+      if @current_user
+      @new_booking_hash =
       {
-        user_id: @current_user.id,
-        activity_id: @activity.id
+        booking:
+        {
+          user_id: @current_user.id,
+          activity_id: @activity.id
+        }
       }
-    }
+    end
   end
 
   def find_me
@@ -43,5 +45,10 @@ class ActivitiesController < ApplicationController
     @activity = Activity.all.sample
     redirect_to activity_path(@activity)
   end
+
+  def specific_random
+    @new = @activity.spec_random
+    redirect_to activity_path(@new)
+  end 
 
 end
